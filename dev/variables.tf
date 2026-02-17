@@ -5,7 +5,7 @@
 variable "aws_account_id" {
   description = "AWS Account ID"
   type        = string
-  default     = "327019199684"
+  default     = "957877468227"
 }
 
 variable "aws_region" {
@@ -25,16 +25,16 @@ variable "main_region" {
 ################################################################################
 
 variable "env_name" {
-  description = "Environment name (e.g. dev, staging, dev)"
+  description = "Environment name (e.g. dev, staging, prod)"
   type        = string
-  default     = "dev"
+  default     = "prod"
 }
 
 variable "tags" {
   description = "Common tags for all resources"
   type        = map(string)
   default = {
-    devuct   = "fintech-app"
+    product   = "fintech-app"
     ManagedBy = "terraform"
   }
 }
@@ -46,13 +46,13 @@ variable "tags" {
 variable "cluster_name" {
   description = "Name of the EKS cluster"
   type        = string
-  default     = "dev-dominion-cluster"
+  default     = "class40-prod-chris"
 }
 
 variable "rolearn" {
   description = "IAM role ARN to be added to the aws-auth configmap as admin"
   type        = string
-  default     = "arn:aws:iam::327019199684:role/terraform-create-role"
+  default     = "arn:aws:iam::957877468227:role/terraform-create-role"
 }
 
 
@@ -75,7 +75,7 @@ variable "instance_type" {
 variable "key_name" {
   description = "EC2 Key Pair name for SSH access"
   type        = string
-  default     = "class39-dominion"
+  default     = "class40key"
 }
 
 ################################################################################
@@ -85,19 +85,19 @@ variable "key_name" {
 variable "domain_name" {
   description = "Primary domain name for certificate issuance"
   type        = string
-  default     = "*.fusisoft.com"
+  default     = "*.chris-systems.com"
 }
 
 variable "san_domains" {
   description = "SANs (Subject Alternative Names) for SSL certificate"
   type        = list(string)
-  default     = ["*.fusisoft.com"]
+  default     = ["*.chris-systems.com"]
 }
 
 variable "route53_zone_id" {
   description = "Route 53 hosted zone ID for domain validation"
   type        = string
-  default     = "ZC7WDABJDII2"
+  default     = "Z09158922MIFTD61GXDQB"
 }
 
 ################################################################################
@@ -107,7 +107,7 @@ variable "route53_zone_id" {
 variable "repositories" {
   description = "List of ECR repositories to create"
   type        = list(string)
-  default     = ["fintech-app"]
+  default     = ["fintech-app", "gateway"]
 }
 
 ################################################################################

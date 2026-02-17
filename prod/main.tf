@@ -163,16 +163,16 @@ module "iam" {
 # }
 
 
-# module "github-self-hosted-runner" {
-#   source            = "./../modules/github-self-hosted-runner"
-#   ami_id            = local.final_ami_id
-#   instance_type     = var.instance_type
-#   key_name          = var.key_name
-#   main_region       = var.main_region
-#   security_group_id = module.eks-client-node.eks_client_sg
-#   subnet_id         = module.vpc.public_subnets[0]
-#   cluster_name      = module.eks.cluster_name
-# }
+module "github-self-hosted-runner" {
+  source            = "./../modules/github-self-hosted-runner"
+  ami_id            = local.final_ami_id
+  instance_type     = var.instance_type
+  key_name          = var.key_name
+  main_region       = var.main_region
+  security_group_id = module.eks-client-node.eks_client_sg
+  subnet_id         = module.vpc.public_subnets[0]
+  cluster_name      = module.eks.cluster_name
+}
 
 module "maven-sonarqube-server" {
   source            = "./../modules/maven-sonarqube-server"
@@ -236,5 +236,4 @@ module "maven-sonarqube-server" {
 #   private_subnets           = module.vpc.private_subnets
 #   grafana_security_group_id = module.managed_grafana.security_group_id
 # }
-
 
