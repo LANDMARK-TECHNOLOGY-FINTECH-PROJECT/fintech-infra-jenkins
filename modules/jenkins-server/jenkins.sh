@@ -107,7 +107,7 @@ echo "Obtaining Let’s Encrypt SSL certificate..."
 sudo certbot --nginx \
   --non-interactive \
   --agree-tos \
-  --email fusisoft@gmail.com \
+  --email ikechukwu.ijeoma79@gmail.com \
   -d jenkins.dominionsystem.org
 
 echo "Setting up daily cron for Certbot renewal..."

@@ -12,7 +12,7 @@ aws iam attach-role-policy \
 --policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy 
 
 
-aws eks create-addon --cluster-name dominion-cluster --addon-name amazon-cloudwatch-observability
+aws eks create-addon --cluster-name class40-prod-chris --addon-name amazon-cloudwatch-observability
 
 
 

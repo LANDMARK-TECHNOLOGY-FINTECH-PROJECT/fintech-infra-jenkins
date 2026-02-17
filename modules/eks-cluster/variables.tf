@@ -51,4 +51,3 @@ variable "tags" {
 variable "env_name" {
   type = string
 }
-

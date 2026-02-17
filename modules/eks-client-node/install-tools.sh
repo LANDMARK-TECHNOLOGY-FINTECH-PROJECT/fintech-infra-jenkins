@@ -221,4 +221,3 @@ configure_kube() {
 }
 
 configure_kube
-
