@@ -236,5 +236,3 @@ module "maven-sonarqube-server" {
 #   private_subnets           = module.vpc.private_subnets
 #   grafana_security_group_id = module.managed_grafana.security_group_id
 # }
-
-
