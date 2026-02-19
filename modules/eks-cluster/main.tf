@@ -29,7 +29,7 @@ module "eks" {
   cluster_name    = var.cluster_name
   cluster_version = "1.32"
 
-  enable_cluster_creator_admin_permissions = false
+  enable_cluster_creator_admin_permissions = true
   cluster_endpoint_public_access           = true
 
   # ✅ Let Terraform manage add-ons
@@ -83,9 +83,9 @@ module "eks" {
     ami_type       = "AL2023_x86_64_STANDARD"
     instance_types = ["t3.medium"]
 
-    min_size     = 3
+    min_size     = 1
     max_size     = 5
-    desired_size = 3
+    desired_size = 1
 
     iam_role_additional_policies = {
       AmazonEKSWorkerNodePolicy          = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
